@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
     char command[MAX_LINE * 2];
     printf("Recording message: ");
     fflush(stdout);
-    snprintf(command, sizeof(command), "echo \"%s\" | tee -a /tmp/injectable", buffer);
+    snprintf(command, sizeof(command), "echo \"%s\" | tee -a /tmp/loggable", buffer);
     
     fprintf(stderr, "Executing: [%s]\n", command);
     system(command);

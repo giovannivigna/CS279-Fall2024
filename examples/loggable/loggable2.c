@@ -7,7 +7,7 @@
 
 #define MAX_LINE 1024
 // Allows only the characters for text, numbers, and URLs, inlcuding dot, dash, @, colon, quotes, and /
-#define SANITIZE_REGEX "^[A-Za-z0-9 .@:\"//-]+$"
+#define SANITIZE_REGEX "^[A-Za-z0-9 .-@:\"//]+$"
 
 // Function to check if a string matches a given regex pattern
 int is_safe_input(const char *string, const char *pattern) {
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
     char command[MAX_LINE * 2];
     printf("Recording message: ");
     fflush(stdout);
-    snprintf(command, sizeof(command), "echo \"%s\" | tee -a /tmp/injectable", buffer);
+    snprintf(command, sizeof(command), "echo \"%s\" | tee -a /tmp/loggable", buffer);
     
     fprintf(stderr, "Executing: [%s]\n", command);
     system(command);
