@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
     fflush(stdout);
     snprintf(command, sizeof(command), "echo \"%s\" | tee -a /tmp/loggable", buffer);
     
-    fprintf(stderr, "Executing: [%s]\n", command);
+    // fprintf(stderr, "Executing: [%s]\n", command);
     system(command);
     printf("Message [%s] received and added to the log\n", buffer);
    

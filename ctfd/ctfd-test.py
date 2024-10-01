@@ -7,8 +7,8 @@ import IPython
 # %%
 ctf_url = os.environ["CTF_URL"]
 ctf_token = os.environ["CTF_TOKEN"]
-#ctf_sitepwd = os.environ["CTF_SITEPWD"]
-ctf_sitepwd = ""
+ctf_sitepwd = os.environ["CTF_SITEPWD"]
+#ctf_sitepwd = ""
 
 # %%
 s = requests.Session()
@@ -25,7 +25,7 @@ else:
     print("Received error: switching to interactive")
     IPython.embed()
 
-# %%
+# %%sudo 
 print("Retrieving challenges")
 r = s.get(
     f"{ctf_url}/api/v1/challenges", cookies=cookies,
