@@ -55,7 +55,7 @@ healthcheck: null
 # Accepts strings or dictionaries of CTFd API data
 flags:
     # A static case sensitive flag
-    - ictf{ThisIsNotAHealthyEnvironment}
+    - ictf{ThisIsAToxicEnvironment}
     # A static case sensitive flag created with a dictionary
     #- {
     #    type: "static",
