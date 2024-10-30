@@ -50,7 +50,7 @@ void list_files() {
         return;
     }
 
-    printf("Files in './files' directory:\n");
+    printf("Files:\n");
     while ((de = readdir(dr)) != NULL) {
         if (de->d_name[0] != '.') // Skip hidden files and "." and ".."
             printf("%s\n", de->d_name);
@@ -67,7 +67,6 @@ void print_file(const char *filepath) {
         return;
     }
 
-    // Print file contents to stdout
     while (fgets(buffer, sizeof(buffer), file) != NULL) {
         printf("%s", buffer);
     }
@@ -117,11 +116,12 @@ int main(int argc, char** argv) {
 
 
   while (1) {
-    printf("Select an option:\n");
+    printf("\nSelect an option:\n");
     printf("1. List files\n");
     printf("2. Read a file\n");
     printf("3. Exit\n");
     printf("Enter your choice: ");
+    fflush(stdout);
 
     if (scanf("%d", &choice) != 1) {
       fprintf(stderr, "Invalid input\n");
@@ -136,6 +136,7 @@ int main(int argc, char** argv) {
 
       case 2:
         printf("Enter the filename: ");
+        fflush(stdout);
         scanf("%s", input);
 
         if (strstr(input, "..") != NULL) {
@@ -152,16 +153,19 @@ int main(int argc, char** argv) {
         }
 
         snprintf(filepath, sizeof(filepath), "./files/%s", decoded_filename);
-
+        printf("Opening file %s\n", filepath);
         print_file(filepath);
+        fflush(stdout);
         break;
 
       case 3:
         printf("Exiting...\n");
+        fflush(stdout);
         return 0;
 
       default:
         printf("Invalid choice. Try again.\n");
+        fflush(stdout);
     }
   }
 

@@ -14,7 +14,6 @@ RUN chmod 755 /home/challenge
 
 # Source files
 COPY src /home/challenge/src
-COPY src/permissions /home/challenge/permissions
 # Read-only files
 COPY ro /home/challenge/ro
 # Writeable files
@@ -25,13 +24,13 @@ RUN chmod 755 /home/challenge/rw
 # Creates the application
 WORKDIR /home/challenge/src
 RUN make
-RUN cp whattheenv /home/challenge/ro/whattheenv
+RUN cp sympathy /home/challenge/ro/sympathy
 RUN cp service.sh /home/challenge/ro/service.sh
 RUN chmod 755 /home/challenge/ro/service.sh
 
 # Install the service
-RUN cp xinetd.conf /etc/xinetd.d/whattheenv
+RUN cp xinetd.conf /etc/xinetd.d/sympathy
 
 # The port this leaves on
-EXPOSE 11239
+EXPOSE 40404
 CMD ["/usr/sbin/xinetd", "-dontfork"]
