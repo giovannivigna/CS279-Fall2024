@@ -2,10 +2,10 @@
 # other tools to install and deploy your challenge.
 
 # Required sections
-name: "longshotr"
+name: "webifile"
 author: "zanardi"
-category: source code
-description: "Convince the service to send you the contents of the flag file (/flag.txt).\nYou have access to the source code of the application."
+category: web
+description: "Find the flag. It's 'documented'!"
 value: 100
 type: standard
 
@@ -18,6 +18,8 @@ type: standard
 #     decay: 100
 #     minimum: 50
 
+### This cannot be used because CTFd does not support multi-component challenges    
+
 # Settings used for Dockerfile deployment
 # If not used, remove or set to null
 # If you have a Dockerfile set to .
@@ -25,10 +27,11 @@ type: standard
 # Follow Docker best practices and assign a tag
 image: .
 
+
 # Specify a protocol that should be used to connect to the running image
 # For example if the image is a website you can specify http or https
 # Otherwise you can specify tcp
-protocol: tcp
+protocol: http
 
 # Specify a host to deploy the challenge onto.
 # The currently supported URI schemes are ssh:// and registry://
@@ -55,7 +58,7 @@ healthcheck: null
 # Accepts strings or dictionaries of CTFd API data
 flags:
     # A static case sensitive flag
-    - ictf{LongStringsCanLookVeryShort}
+    - ictf{TraverseToTheFlag}
     # A static case sensitive flag created with a dictionary
     #- {
     #    type: "static",
@@ -78,19 +81,18 @@ flags:
 # They are generally only visible to admins
 # Accepts strings
 topics:
-    - remote applications
+    - web
 
 # Tags are used to provide additional public tagging to a challenge
 # Can be removed if unused
 # Accepts strings
 tags:
-    - remote applications
+    - web
 
 # Provide paths to files from the same directory that this file is in
 # Accepts strings
-files:
-    - src/longshotr.c
-    - longshotr-bundle.tgz
+#files:
+#    - null
 
 # Hints are used to give players a way to buy or have suggestions. They are not
 # required but can be nice.
