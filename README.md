@@ -11,7 +11,10 @@ Warmup: loggable (solved in class)
 
 2024-10-27 HW3 Challenge sympathy - 2 weeks due 2024-11-04
 
-2024-10-30 HW4 Challenge getbuff and badtable - 2 weeks due 2024-11-13
+2024-10-30 HW4 Challenges getbuff and badtable - 2 weeks due 2024-11-13
+
+2024-11-18 HW5 Challenges formath, thisisbss, and longshotr - 2 weeks due 2024-12-2
+
 
 2024-11-13 Project proposals
 
