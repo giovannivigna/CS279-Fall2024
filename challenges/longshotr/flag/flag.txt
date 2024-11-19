@@ -1,2 +1,2 @@
-ictf{LongStringsCanLookVeryShort}
+ictf{ShortStringsCanBeVeryLong}
 
